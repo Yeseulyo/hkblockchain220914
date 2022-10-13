@@ -1,0 +1,88 @@
+alter session set "_ORACLE_SCRIPT"=true;
+
+create user 사용자계정 identified by 비밀번호;
+
+grant resource,create session, connect, dba  to 사용자계정;
+
+
+alter user 사용자계정 default tablespace users quota unlimited on users;
+
+
+
+-- 새 사용자 만들기
+
+alter session set "_ORACLE_SCRIPT"=true;
+
+create user smrit identified by oracle;     --- 11g 사용할 때
+
+grant resource,create session, connect, dba  to smrit;     --- 11g 사용할 때
+
+alter user smrit default tablespace users quota unlimited on users;    --- 11g 사용할 때
+
+--- 만든 smrit 계정 검색하기
+select * from dba_users where username = 'SMRIT';
+
+
+--- hr 계정 만들기
+select * from dba_users where username = 'HR';     
+
+alter session set "_ORACLE_SCRIPT"=true;   --- 11g에서는 실행 안함
+
+create user hr identified by hr;   --- 11g에서는 실행 안함
+
+grant resource,create session, connect  to hr;   --- 11g에서는 실행 안함
+
+alter user hr default tablespace users quota unlimited on users;   --- 11g에서는 실행 안함
+
+select * from dba_users where username = 'HR';
+
+--- 사용자 계정 락 풀기
+alter user smrit account unlock;
+--- 사용자 비밀번호 변경
+alter user smrit identified by oracle;
+
+-- 계정 삭제
+alter session set "_ORACLE_SCRIPT"=true;
+drop user 사용자계정;
+
+
+샘플 데이터 : 
+https://github.com/oracle-samples/db-sample-schemas/releases
+
+맥에 오라클 설치 : 
+https://goldencrab.tistory.com/entry/oracle-%EC%84%A4%EC%B9%98
+
+11gR2다운로드
+https://www.oracle.com/database/technologies/xe-prior-release-downloads.html
+
+
+
+사용자명 입력: sys as sysdba 또는 SQL> conn /as sysdba
+SQL> alter session set "_ORACLE_SCRIPT"=true;
+SQL> @?/demo/schema/human_resources/hr_main.sql;
+
+specify password for HR as parameter 1:
+1의 값을 입력하십시오: hr
+
+specify default tablespeace for HR as parameter 2:
+2의 값을 입력하십시오: users
+
+specify temporary tablespace for HR as parameter 3:
+3의 값을 입력하십시오: temp
+
+specify password for SYS as parameter 4:
+4의 값을 입력하십시오: 1234
+
+specify log path as parameter 5:
+5의 값을 입력하십시오: C:\app\user\product\21c
+
+specify connect string as parameter 6:
+6의 값을 입력하십시오: localhost:1521/xe
+
+
+human_resources/hr_cre.sql
+human_resources/hr_popul.sql
+human_resources/hr_idx.sql
+human_resources/hr_code.sql
+human_resources/hr_comnt.sql
+human_resources/hr_analz.sql
