@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+	// 내장 함수
+	document.write("10 + 20" + "<br>");
+	document.write(eval("10 + 20") + "<br>");  <!-- 문자열을 자바스크립트함수로 바꾸는 법 -->
+	var num = 100;
+	document.write(eval("num") + 10 + "<br>");
+	// isNaN(): is Not A Number; 
+	document.write(isNaN(100) + "<br>");  //  안에 있는 데이터가 숫자로만 이루어져있지 않습니까?
+	document.write(isNaN("100") + "<br>");
+	document.write(isNaN("123-1234-1234") + "<br>");
+	document.write(isNaN("01071461970") + "<br>");
+	document.write(Number("10") + parseInt("20") + "<br>");
+	document.write(String(10) + String(20) + "<br>");
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

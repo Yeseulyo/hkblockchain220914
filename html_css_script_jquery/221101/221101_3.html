@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+  // String 객체
+	var theText = "Web Js Hi Ciy";
+	document.write(theText + "<br>");
+	document.write(theText.bold() + "<br>");
+	document.write(theText.length + "<br>");
+	document.write(theText.toLowerCase() + "<br>");
+	document.write(theText.toUpperCase() + "<br>");
+	document.write(theText.indexOf("i") + "<br>");
+	document.write(theText.lastIndexOf("i") + "<br>");
+	// index가 5에 해당하는 문자
+	document.write(theText.charAt(5) + "<br>");
+	document.write(theText.substring(4, 4+2) + "<br>");
+	document.write(theText.substr(4,2) + "<br>");  // DB스타일
+	document.write(theText.replace("Web","Bye") + "<br>");
+	document.write(theText + "<br>");
+	document.write(theText.concat(" good") + "<br>");
+	document.write(theText.split(" ") + "<br>"); // 배열로 저장됨. (0, 1, 2, 3 index를 가짐.)
+	var arrayStr = theText.split(" ");
+	document.write(arrayStr[0] + "<br>");  // index가 0번째
+
+	var theText1 = new String("Web:Js:Hi:Ciy");
+	document.write(theText1.split(":") + "<br>");
+	document.write(theText1.split(":")[1] + "<br>"); // 배열의 2번째 갖고오겠다.
+	document.write(theText1.split(":")[3] + "<br>");
+
+	var theText2 = "images/img10.jpg";
+	/// 숫자만 출력하세요.
+	document.write(theText2.substr(10,2) + "<br>");
+	document.write(theText2.split("/")[1].substr(3,2) + "<br>");
+	// 마지막 문자 추출
+	document.write(theText2.lastIndexOf("g") + "<br>");
+	document.write(theText2.charAt(15) + "<br>");
+	document.write(theText2.charAt(theText2.length -1) + "<br>");
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
