@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+  <script>
+	
+	$(document).ready(function(){
+			document.getElementById("txt1").value=10;
+	});
+
+	$(function(){
+		document.getElementById("txt2").value=10;
+	});
+	// DOM 대신에 사용
+	// selector를 이용해서 자바스크립트 사용
+	$(function(){
+		$("#txt3").val(10);
+		$(".txt3").val(10);
+	});
+  </script>
+ </head>
+ <body>
+  <input type="text" id="txt">
+  <input type="text" id="txt1">
+  <input type="text" id="txt2">
+  <input type="text" id="txt3">
+  <input type="text" class="txt3">
+ </body>
+</html>
+<script>
+	document.getElementById("txt").value=10;
+</script>
+
+
+
+<!-- 기본형
+	$(document).ready(
+		function(){
+			
+		}
+	);
+-->
+
+<!--  
+	$(function(){
+		
+	});
+-->
