@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>fadeOut / fadeIn / fadeToggle / fadeTo</title>
+  <script type="text/javascript"
+            src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+  <script>
+	$(function(){
+		$("#btn7").click(function(){
+			$(this).parent().next().children(1).next().fadeOut(1000);
+		});
+		$("#btn8").click(function(){
+			$(this).parent().next().children(1).next().fadeIn(1000);
+		});
+		$("#btn9").click(function(){
+			$(this).parent().next().children(1).next().fadeToggle(1000);
+		});
+		$("#btn10").click(function(){
+			$(this).parent().next().children(1).next().fadeTo(1000,0.3);  // fadeTo는 0부터 1까지의 값을 사용(0으로 갈수록 흐리게, 1로 갈수록 진하게 표시됨.)
+		});
+		$("#btn11").click(function(){
+			$(this).parent().next().children(1).next().fadeTo(1000,1);
+		});
+	});
+  </script>
+ </head>
+ <body>
+  <p>
+	<button id="btn7">fadeOut</button>
+	<button id="btn8">fadeIn</button>
+	<button id="btn9">fadeToggle</button>
+	<button id="btn10">fadeTo(0.3)</button>  
+	<button id="btn11">faedTo(1)</button>
+  </p>
+  <div>
+	<h3>관련 사이트</h3>
+	<ul class="list1">   
+		<li><a href="#">list1</a></li>
+		<li><a href="#">list2</a></li>
+		<li><a href="#">list3</a></li>
+		<li><a href="#">list4</a></li>
+	</ul>
+ </div>
+ </body>
+</html>
